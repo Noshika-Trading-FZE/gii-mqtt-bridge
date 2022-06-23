@@ -1,0 +1,22 @@
+#
+# Copyright: Pixel Networks <support@pixel-networks.com> 
+# Author: Oleg Borodin <oleg.borodin@pixel-networks.com>
+#
+FROM golang:1.16.2-alpine
+
+ENV HOME=/app
+RUN mkdir $HOME
+
+WORKDIR /go/src/app
+
+COPY . .
+ENV CGO_ENABLED=0 
+RUN go build pmbri.go
+RUN cp pmbri $HOME 
+ADD pmbri.yml $HOME/
+ADD start-bri $HOME/
+
+RUN rm -rf /go/src/app
+
+CMD $HOME/start-bri
+#EOF

@@ -1,0 +1,8 @@
+#!/bin/sh
+set -x
+./pixctl login --api http://pix-core-api:5000/graphql \
+    --username $CONFIG_API_USERNAME \
+    --password $CONFIG_API_PASSWORD \
+    --waitforapi &&
+        ./pixctl schema import --recursive /pmdata/schemas/ && 
+        ./pmbri

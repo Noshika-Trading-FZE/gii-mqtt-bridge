@@ -1,0 +1,10 @@
+debug: false
+#appOwner: 4febcecb-5bf6-4a94-9bfb-ebd4b4598704
+#schemaId: 99290bba-0ca1-4148-8ff6-806754756947
+#objectId: a4dbd8c3-6782-4a88-b671-1b15a8fa0fde
+#driverId: c0f8ceb4-6555-400f-87b2-4d3dfc7700b0
+core:
+  URL: http://127.0.0.1:5000/graphql
+  #username: mqttbridge
+  password: F09Mt0KP7LPE8jCW28vUSftV0Wj90V69
+  #tokenttl: 1

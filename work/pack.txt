@@ -1,0 +1,30 @@
+
+
+[ 3: [ 2: [ 1: xxx ] ] ] 
+=====================
+
+
+1 { "subject": "hello", "message": "world" }
+
+2 { "packetSeq": 123, "receiver": 14, "payload": "{ \"subject\": \"hello\", \"message\": \"world\" }" }
+
+3 { "to": "engine13", "payload": "{ \"packetSeq\": 123, \"receiver\": 14, \"payload\": \"{ \\"subject\\": \\"hello\\", \\"message\\": \\"world\\" }\" }" }
+
+=====================
+
+json = []byte
+
+1 { "subject": "hello", "message": "world" }
+
+2 { "packetSeq": 123, "receiver": 14, "payload": "eyAic3ViamVjdCI6ICJoZWxsbyIsICJtZXNzYWdlIjogIndvcmxkIiB9" }
+
+3 { "to": "engine13", "payload": "eyAicGFja2V0IjogMTIzL......mR2Y214a0lpQjkiIH0=" }
+
+=====================
+
+type A struct {
+    packetSeq int
+    receiver  int
+    payload   []byte
+}
+ 

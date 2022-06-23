@@ -1,0 +1,21 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+
+my $filename = 'VERSION';
+open(FH, '<', $filename) or die $!;
+my $line = <FH>;
+close(FH);
+
+my $ver = chomp($line);
+my ($major, $minor, $patch) = split(/\./, $line);
+$patch += 1;
+
+open(FH, '>', $filename) or die $!;
+print FH "$major.$minor.$patch";
+print "$major.$minor.$patch", "\n";
+close(FH);
+#EOF
+
+
+
